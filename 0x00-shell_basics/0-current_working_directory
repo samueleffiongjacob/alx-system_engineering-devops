@@ -1,3 +1,2 @@
 #!/bin/bash
-DIR_PARTH=$(realpath "${BASH_source:-$0}")
-$DIR_PARTH
+dirname "$(realpath $0)"
