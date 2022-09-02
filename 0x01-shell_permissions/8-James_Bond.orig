@@ -1,6 +1,2 @@
 #!/bin/bash
-<<<<<<< HEAD
-chmod u+x hello
-=======
 chmod 007 hello
->>>>>>> 3984eac64b756735f501f9210de820e7336d5d7a
