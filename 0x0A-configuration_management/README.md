@@ -54,4 +54,24 @@ $ sudo apt-get install -y puppet
 #installs puppet linter
 $ gem install puppet-lint
 ```
+
+## WORKING WITH PUPPET .
+# To work with puppet commands...
+__puppet extension__
+ 0-create_a_file.pp or any .pp 
+
+__to create file in puppet__
+puppet-lint 0-create_a_file.pp
+
+__to run a puppet file__
+puppet apply filename.
+
+__checking for name/path__
+ls -l /tmp/school
+
+__check what is inside the file__
+cat file path
+
 __Follow the above instructions to install puppet and puppet-linter then watch the video to enable you understand how to get started with the task__
+
+
