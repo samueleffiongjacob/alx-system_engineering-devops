@@ -4,4 +4,4 @@
 
 ssh -i ~/.ssh/school ubuntu@100.26.178.1
 
-#ssh  ~/.ssh/school ubuntu@100.26.178.1
+#ssh  ~/.ssh/school ubuntu@100.26.178.1  -----> use only if u accepted default
