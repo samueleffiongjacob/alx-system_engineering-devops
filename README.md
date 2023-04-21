@@ -35,3 +35,5 @@
 - [Attack is the best defense.](./attack_is_the_best_defense)
 
 notting here -> [Read me]()
+
+how to creat ssh :ssh-keygen -t rsa

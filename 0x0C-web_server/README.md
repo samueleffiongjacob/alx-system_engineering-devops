@@ -161,3 +161,5 @@ server {
 ```
 
 coupon for .tech domain once(Holb2023nmz07n)
+
+how to creat ssh :ssh-keygen -t rsa
