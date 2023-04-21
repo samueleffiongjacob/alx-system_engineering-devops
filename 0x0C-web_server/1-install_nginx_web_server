@@ -3,18 +3,42 @@
 # A script that installs nginx server on an ubuntu linux distro.
 # The installed server listens to port 80 (HTTP) for connection
 # And serves a default page index.html on the HTTP  GET request.
+# Configures a new ubuntu machine by installing
+# Nginx where it should be listening on port 80
+# Serve a page that would return a Hello World string
+#
 
-sudo apt-get update -y
+echo -e "Updating and installing Nginx.\n"
+sudo apt-get update -y -qq && \
+	 sudo apt-get install nginx -y
 
+echo -e "\nSetting up some minor stuff.\n"
 # what does -y mean in this context click Read me to see -> [Read me](https://intranet.alxswe.com/rltoken/KJiFZ4yJyTGp_cv3DYQLaQ)
 
-sudo apt-get install nginx -y
+#sudo apt-get install nginx -y
 
 echo 'Hello World!' > /var/www/html/index.html
 
-service nginx restart # or  u can also use systemctl to restart nginx
+sudo service nginx restart # or  u can also use systemctl to restart nginx
 
 
 # In this example 34.198.248.145 is the IP of my web-01 server. If you want to query the Nginx that is locally installed on your server, you can use curl 127.0.0.1.
 
 #If things are not going as expected, make sure to check out Nginx logs, they can be found in /var/log/.
+# allowing nginx on firewall
+sudo ufw allow 'Nginx HTTP'
+
+# Give the user ownership to website files for easy editing
+sudo chown -R "$USER":"$USER" /var/www/html
+sudo chmod -R 755 /var/www
+
+# Backup default index
+cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.bckp
+
+# Creating new index
+echo -e "Hello World!" | dd status=none of=/var/www/html/index.nginx-debian.html
+
+# Restarting nginx
+sudo service nginx restart
+
+echo -e "\nCompleted. ✅\n"
