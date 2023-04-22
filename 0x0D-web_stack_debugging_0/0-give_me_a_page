@@ -4,3 +4,8 @@
 #start apache2 inside docker
 service apache2 start
 #/etc/init.d/apache2 start
+
+# give persion
+#chmod 600 file
+
+#chmod u+x
