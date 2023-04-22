@@ -14,3 +14,6 @@ su nginx -s /bin/bash -c 'service nginx restart'
 #chown nginx:nginx /etc/nginx.conf
 #service nginx reload
 #service nginx restart
+
+# when ever u want stop nginx server 
+# service ngix stop

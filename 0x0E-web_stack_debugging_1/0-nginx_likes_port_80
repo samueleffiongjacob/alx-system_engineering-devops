@@ -13,6 +13,10 @@
 
 #or 
 
+# confirm status is working
+# service ngnix status
+#confirm who u are : whoami 
+
 new_one = "80 default_server"
 old_one = "8080 default_server"
 
