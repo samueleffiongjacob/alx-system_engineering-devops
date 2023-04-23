@@ -1,7 +1,17 @@
 #!/usr/bin/env bash
 # Fixes server bug
+#================================================
 chmod 644 /etc/nginx/nginx.conf
 sed -Ei 's/\s*#?\s*user .*/user nginx;/' /etc/nginx/nginx.conf
 sed -Ei 's/(listen (\[::\]:)?80) /\180 /' /etc/nginx/sites-enabled/default
 pkill apache2
-su nginx -s /bin/bash -c 'service nginx restart'
+su nginx -s /bin/bash -c 'service nginx restart' \n
+#=========================================================
+
+#pkill apache2
+#directory change
+#sed -i 's/80 default_server/8080 default_server/'  /etc/nginx/sites-available/d\efault
+#permission granting 
+#chown nginx:nginx /etc/nginx.conf
+
+#sudo -u nginx service nginx restart
