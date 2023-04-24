@@ -15,7 +15,7 @@ if __name__ == '__main__':
         tasks = list(filter(lambda x: x.get('userId') == id, task_req))
         completed_tasks = list(filter(lambda x: x.get('completed'), tasks))
         print('Employee {} is done with tasks({}/{}):'.format(employee_name,
-                                                              len(completed_tasks), len(tasks)))
+                len(completed_tasks), len(tasks)))
         if len(completed_tasks) > 0:
             for task in completed_tasks:
                 print('\t{}'.format(task.get('title')))
