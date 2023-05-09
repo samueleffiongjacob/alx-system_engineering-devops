@@ -2,6 +2,6 @@
 # This Script connects to the server 100.26.178.1 using the users private key
 # stored in a file school Found in the users home directory
 
-ssh -i ~/.ssh/id_rsa  ubuntu@35.174.211.216
+ssh -i ~/.ssh/id_rsa  ubuntu@54.88.65.230
 
 #ssh  ~/.ssh/school ubuntu@100.26.178.1  -----> use only if u accepted default
