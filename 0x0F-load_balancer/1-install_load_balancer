@@ -34,7 +34,7 @@ defaults
   timeout server 15s
   timeout http-request 10s
 
-frontend effiongsamuel.tech
+frontend effiongsamuel-tech-frontend
     bind *:80
     default_backend effiongsamuel-tech-backend
 
