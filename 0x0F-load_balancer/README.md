@@ -120,7 +120,7 @@ backend web_servers
 :wq(to save and exit)
 --------------- or ----------------------- 
 $ echo '
-frontend effiongsamuel.tech
+frontend effiongsamuel-tech
         bind 0:80
   mode http
         default_backend web_servers
@@ -138,3 +138,5 @@ $ service haproxy restart
 # configure yours on a fly.
 ```
 
+curl -si localhost ----- test loadbalancer
+curl -ls ip ------- test other server
