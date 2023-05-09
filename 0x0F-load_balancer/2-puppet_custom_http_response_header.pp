@@ -7,21 +7,24 @@ exec { 'update system':
         user    => 'root',
         provider=>  'shell'
 }
-->
 # install nginx web server on server
-package { 'nginx':
-	ensure => 'installed',
-	require => Exec['update system']
+-> package { 'nginx':
+  ensure => 'installed',
+  require => Exec['update system']
 }
 # or use 
 # package { 'nginx':
 #   ensure   => present,
 #   provider => 'apt'
 # }
-->
+
 # custom Nginx response header (X-Served-By: hostname)
-file {'/var/www/html/index.html':
-	content => 'Hello World!'
+-> file_line { 'http_header':
+  ensure => 'present',
+  path  => '/etc/nginx/nginx.conf',
+  after  => 'listen 80 default_server;',
+  match => 'http {',
+  line  => "http {\n\tadd_header X-Served-By \"${hostname}\";",
 }
 
 # or
@@ -44,9 +47,12 @@ exec {'HTTP header':
 }
 
 # start service
-service {'nginx':
-	ensure => running,
-	require => Package['nginx']
+# service {'nginx':
+# 	ensure => running,
+# 	require => Package['nginx']
+# }
+-> exec {'run':
+  command => '/usr/sbin/service nginx restart',
 }
 
 # service { 'nginx':
