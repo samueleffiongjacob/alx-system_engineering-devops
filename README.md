@@ -59,4 +59,6 @@ SC2154-> [Read me](https://github.com/koalaman/shellcheck/wiki/SC2154)
 
 How do I assign a static hostname to an Amazon EC2 instance running Ubuntu Linux? -> [Read me](https://repost.aws/knowledge-center/linux-static-hostname)
 
+Change the hostname of your Amazon Linux instance -> [Read me](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/set-hostname.html)
+
 Ignore  -> [Read me]()
