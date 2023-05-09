@@ -22,8 +22,7 @@ function install() {
 }
 
 # Install nginx on web-01 server
-apt-get -y update
-apt-get -y install nginx #install nginx
+ install nginx #install nginx
 
 echo -e "\nSetting up some minor stuff.\n"
 
