@@ -18,8 +18,7 @@ function install() {
 	fi
 }
 
-apt-get -y update
-apt-get -y install haproxy=1.6.\* #install haproxy
+install haproxy #install haproxy
 
 echo -e "\nSetting up some minor stuff.\n"
 
