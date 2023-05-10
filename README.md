@@ -61,4 +61,25 @@ How do I assign a static hostname to an Amazon EC2 instance running Ubuntu Linux
 
 Change the hostname of your Amazon Linux instance -> [Read me](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/set-hostname.html)
 
+## DNS DETAILS
+A Records DNS -> [Read me](https://support.dnsimple.com/articles/a-record/)
+
+
+CNAME record dns -> [Read me](https://en.wikipedia.org/wiki/CNAME_record)
+
+MX record
+ -> [Read me](https://en.wikipedia.org/wiki/MX_record)
+
+TXT record dns -> [Read me](https://en.wikipedia.org/wiki/TXT_record)
+
+what ls Round Dns  -> [Read me](https://www.dnsknowledge.com/whatis/round-robin-dns/)
+
+DNS Knowledge  -> [Read me](https://www.dnsknowledge.com/whatis/round-robin-dns/)
+
+What’s an NS Record? -> [Read me](https://support.dnsimple.com/articles/ns-record/)
+
+SOA Records  -> [Read me](https://support.dnsimple.com/articles/soa-record/)
+
+what the point having url  -> [Read me](https://serverfault.com/questions/145777/what-s-the-point-in-having-www-in-a-url)
+
 Ignore  -> [Read me]()
