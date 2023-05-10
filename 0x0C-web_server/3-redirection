@@ -44,8 +44,23 @@
 # sudo service nginx restart
 
 
-apt-get -y update
-apt-get -y install nginx
+sudo apt-get -y update
+sudo apt-get -y install nginx
+
+echo -e "\nSetting up some minor stuff and peace  .\n"
+
+# starting nginx service on server
+sudo service nginx start
+
+# allowing nginx on firewall
+sudo ufw allow 'Nginx HTTP'
+
+# Give the user ownership to website files for easy editing
+sudo chown -R "$USER":"$USER" /var/www/html
+sudo chmod -R 755 /var/www
+
+# Backup default index
+cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.bckp
 
 touch /var/www/html/index.html
 echo "Hello World!" > /var/www/html/index.html
