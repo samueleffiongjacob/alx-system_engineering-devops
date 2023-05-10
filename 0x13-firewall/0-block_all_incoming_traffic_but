@@ -1,3 +1,5 @@
+echo -e "SAMUEL EFFIONG YOUR FIREWALL FOR ALX SCHOOL AND effiongsamuel.tech was is about to being please make sure to have internet connect.\n"
+
 echo -e "Updating\n"
 
 sudo apt-get update
@@ -21,3 +23,5 @@ sudo ufw allow 443
 sudo ufw enable
 
 echo -e "Process Completed.\n"
+
+echo -e "SAMUEL EFFIONG YOUR FIREWALL FOR ALX SCHOOL AND effiongsamuel.tech was successful.\n"
