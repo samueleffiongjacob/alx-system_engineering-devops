@@ -57,8 +57,8 @@
 # # restart the server
 # sudo service nginx restart
 
-apt-get update
-apt-get install -y nginx
+sudo apt-get update
+sudo apt-get install -y nginx
 
 echo -e "\nSetting up some minor stuff.\n"
 
