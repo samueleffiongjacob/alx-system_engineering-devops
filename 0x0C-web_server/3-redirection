@@ -25,7 +25,7 @@ cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.b
 # Creating new index
 echo -e "Hello World!" > /var/www/html/index.nginx-debian.html
 
-# Setting up /redirect_me to a youtube video
+# Setting up /redirect_me to a mine site
 sudo sed -i '24i\	rewrite ^/redirect_me https://www.effiongsamuel.tech;' /etc/nginx/sites-available/default
 
 # Restarting nginx
