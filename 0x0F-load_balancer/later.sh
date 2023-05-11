@@ -24,3 +24,37 @@ global
     group haproxy
     daemon
     debug
+
+
+
+//////
+
+
+global
+    log /dev/log    local0
+    stats socket /run/haproxy/admin.sock mode 660 level admin expose-fd listeners
+    user haproxy
+    group haproxy
+    daemon
+    debug
+
+    # Default SSL material locations
+    ca-base /etc/ssl/certs
+    crt-base /etc/ssl/private
+
+    #the hyproxy below line 16 is no longer supported by ubuntu
+    tune.ssl.default-dh-param 2048  
+
+    # Default ciphers to use on SSL-enabled listening sockets.
+    # For more information, see ciphers(1SSL). This list is from:
+
+    #  https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/
+    #  use the ciphers above or the one below
+
+    # See: https://ssl-config.mozilla.org/#server=haproxy&server-version=2.0.3&config=intermediate
+    ssl-default-server-ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384     
+    ssl-default-server-ciphersuites TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256
+    ssl-default-server-options no-sslv3 no-tlsv10 no-tlsv11 no-tls-tickets
+
+    
+    
