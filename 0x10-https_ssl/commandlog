@@ -27,6 +27,8 @@ sudo certbot certonly --webroot
 samueleffiong685@gmail.com
 /etc/letsencrypt
 
+sudo certbot certonly --standalone --preferred-challenges http --http-01-port 80 -d linuxtechgeek.info -d www.linuxtechgeek.info
+
 sudo certbot certonly --standalone --preferred-challenges http --http-01-port 80 -d effiongsamuel.tech -d www.effiongsamuel.tech
 
 sudo certbot certonly --standalone --preferred-challenges http --http-01-port 8080 -d effiongsamuel.tech -d www.effiongsamuel.tech
@@ -145,7 +147,7 @@ listen stats
    stats realm Haproxy\ Statistics
 "
 
-https://www.linuxtechi.com/install-configure-haproxy-on-ubuntu/
+
 
 # haproxy  new setup
 
