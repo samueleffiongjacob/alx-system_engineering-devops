@@ -62,26 +62,28 @@ sudo cp /etc/nginx/sites-enabled/default nginx-sites-enabled_default.backup
 # Add to the nginx configuration file a error page 404
 
 # server_config=\
-# "server {
-		#listen 80 default_server;
-# 		listen [::]:80 default_server;
-# 		root /var/www/html;
-# 		index index.html index.htm index.nginx-debian.html
-# 		server_name_;
-# 		add_header X-Served-By \$hostname;
-# 		location / {
-# 			try_files \$uri \$uri/ =404;
-# 		}
-# 		if (\$request_filename ~ redirect_me){
-# 			rewrite ^ https://th3-gr00t.tk/ permanent;
-# 		}
-# 		error_page 404 /error_404.html;
-# 		location = /error_404.html {
-# 			internal;
-# 		}
-# }"
+"server {
+	
+		root /var/www/html;
+		index index.html index.htm index.nginx-debian.html
+		server_name_;
+		add_header X-Served-By \$hostname;
+		location / {
+			try_files \$uri \$uri/ =404;
+		}
+		if (\$request_filename ~ redirect_me){
+			rewrite ^ https://th3-gr00t.tk/ permanent;
+		}
+		error_page 404 /error_404.html;
+		location = /error_404.html {
+			internal;
+		}
+}"
 
 #shellcheck disable=SC2154
+# first line of code in serve
+	# listen 80 default_server;
+		# listen [::]:80 default_server;
 # echo "$server_config" | sudo dd status=none of=/etc/nginx/sites-enabled/default
 
 if [ "$(pgrep -c nginx)" -le 0 ]; then
