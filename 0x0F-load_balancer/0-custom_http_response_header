@@ -3,8 +3,8 @@
 sudo apt-get -y update
 sudo apt-get -y install nginx
 
-echo Hello world Welecome to my server > /var/www/html/index.nginx-debian.html
-echo Ceci n\'est pas une page > /var/www/html/custom_404.html
+sudo echo Hello world Welecome to my server > /var/www/html/index.html
+sudo echo Ceci n\'est pas une page var server 2 > /var/www/html/custom_404.html
 
 # Configuring redirection
 sudo sed -i '/^\sserver_name.*/a \        rewrite ^/redirect_me https://www.effiongsamuel.tech  permanent;' /etc/nginx/sites-available/default

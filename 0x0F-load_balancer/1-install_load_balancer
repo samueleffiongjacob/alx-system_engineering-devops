@@ -19,6 +19,7 @@ echo -e  "HAproxy INSTALLING BEGINS run ended...\n==============================
 
 sudo apt-get -y install haproxy=2.6.\*
 
+sudo cp haproxy/haproxy.cfg  haproxy_default.backup
 echo -e "haproxy INSTALLING ends run ended...\n======================================================================>"
 # Configure haproxy configuration file to distribute requests using a roundrobin algorithm
 echo '
