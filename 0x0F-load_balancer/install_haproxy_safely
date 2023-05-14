@@ -9,7 +9,7 @@
 
 sudo apt install --no-install-recommends software-properties-common
 
-sudo add-apt-repository ppa:vbernat/haproxy-2.4 -y
+sudo add-apt-repository ppa:vbernat/haproxy-2.6 -y
 
 sudo apt install haproxy=2.6.\*
 
@@ -17,3 +17,9 @@ sudo apt install haproxy=2.6.\*
 haproxy -v
 
 echo -e "version of haproxy shown above"
+
+#It’s recommended to enable the service to auto-start on very system reboot as shown.
+
+sudo systemctl enable haproxy
+
+sudo systemctl status haproxy
