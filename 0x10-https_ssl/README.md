@@ -110,3 +110,19 @@ _If you don't have HAProxy installed just copy and run this on your terminal and
 $ wget -O haproxy https://github.com/samueleffiongjacob/alx-system_engineering-devops/raw/master/0x0F-load_balancer/install_haproxy_safely && bash haproxy
 
 ```
+
+
+![haproxy configuration](https://www.ssllabs.com/ssltest/)
+
+![haproxy configuraton](https://www.haproxy.com/blog/the-four-essential-sections-of-an-haproxy-configuration/)
+
+![User Guide documentation certbot](https://eff-certbot.readthedocs.io/en/stable/using.html#changing-a-certificate-s-key-type)
+
+
+![certbot ssl generator official site](https://certbot.eff.org/)
+![certbot instructions FOR haproxy in ubuntu --versions](https://certbot.eff.org/instructions?ws=haproxy&os=ubuntufocal)
+
+![DEV GUIDE FOR Setting up SSL Certificates for HAProxy with certbot](https://dev.to/phansch/setting-up-ssl-certificates-for-haproxy-with-certbot-bb0)
+
+
+![Skarlso's guide for Haproxy](https://skarlso.github.io/2017/02/15/how-to-https-with-hugo-letsencrypt-haproxy/)

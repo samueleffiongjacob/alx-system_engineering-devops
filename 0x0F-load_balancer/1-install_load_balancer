@@ -1,61 +1,36 @@
 #!/usr/bin/env bash
-# install load balancer
+# configures a new HAproxy as a load balancer
 
+# Install HAproxy on a server
+echo -e "Updating ubuntu doing some minor checks...\n"
+sudo apt-get -y update
+echo -e  "HAproxy INSTALLING BEGINS"
+sudo apt-get -y install haproxy=1.6.\*
 
-echo -e "Updating and doing some minor checks...\n"
+echo -e "haproxy INSTALLING ends"
+# Configure haproxy configuration file to distribute requests using a roundrobin algorithm
+echo '
+frontend www.effiongsamuel.tech
+        bind 54.237.56.1:80
+        default_backend effiongsamuel_tech_backend
 
-function install() {
-	command -v "$1" &> /dev/null
-
-	#shellcheck disable=SC2181
-	if [ $? -ne 0 ]; then
-		echo -e "	Installing: $1\n"
-		sudo apt-get update -y -qq && \
-			sudo apt-get install -y "$1" -qq
-		echo -e "\n"
-	else
-		echo -e "	${1} is already installed.\n"
-	fi
-}
-
-install haproxy #install haproxy
-
-echo -e "\nSetting up some minor stuff.\n"
-
-# backup default server config file
-sudo cp /etc/haproxy/haproxy.cfg haproxy_default.backup
-
-server_config=\
-" defaults
-    log     global
-    mode    http
-    option  httplog
-    option  dontlognull
-    timeout connect 5000ms
-    timeout client  50000ms
-    timeout server  50000ms    
-
-frontend effiongsamuel-frontend
-    bind *:80
-	bind *:443 ssl crt /etc/haproxy/certs/effiongsamuel.tech.pem 
-    http-request redirect scheme https code 301 unless { ssl_fc }
-    http-request set-header X-Forwarded-Proto http
-    default_backend effiongsamuel-backend
-
-backend effiongsamuel-backend
+backend effiongsamuel_tech_backend
         balance roundrobin
-        server 139694-web-01 100.26.178.1:80 check
-        server 139694-web-02 34.202.157.245:80 check
-"
+        server 139694-web-02 34.202.157.245:80
+        server 139694-web-01 100.26.178.1:80
+' >> /etc/haproxy/haproxy.cfg
 
-# shellcheck disable=SC2154
-echo "$server_config" | sudo dd status=none of=/etc/haproxy/haproxy.cfg
+# Restart HAproxy service
+sudo service haproxy restart
 
-# enable haproxy to be started by init script
-echo "ENABLED=1" | sudo dd status=none of=/etc/default/haproxy
+echo -e "service setup sucessful"
 
-if [ "$(pgrep -c haproxy)" -le 0 ]; then
-	sudo service haproxy start
-else
-	sudo service haproxy restart
-fi
+echo -e "view version of haproxy install"
+
+# VIEWING HAPROXY
+haproxy -v
+
+#
+sudo service haproxy status
+
+#https://www.linuxtechi.com/install-configure-haproxy-on-ubuntu/

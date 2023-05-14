@@ -1,1 +1,5 @@
 effiongsamuel.tech
+
+certbot certonly --cert-name effiongsamuel.tech --webroot --webroot-path "/var/www/html/mysite" -d www.effiongsamuel.tech,www.effiongsamuel.tech
+
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
