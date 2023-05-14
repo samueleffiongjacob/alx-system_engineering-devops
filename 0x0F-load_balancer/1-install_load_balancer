@@ -30,6 +30,13 @@ backend effiongsamuel_tech_backend
         balance roundrobin
         server 139694-web-02 34.202.157.245:80
         server 139694-web-01 100.26.178.1:80
+
+listen stats
+   bind *:8080
+   stats enable
+   stats uri /
+   stats refresh 5s
+   stats realm Haproxy\ Statistics
 ' >> /etc/haproxy/haproxy.cfg
 
 # Restart HAproxy service
