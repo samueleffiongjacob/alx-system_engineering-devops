@@ -54,4 +54,8 @@ echo -e "viewing haproxy status run ended...\n==================================
 #
 sudo service haproxy status
 
+# below to copy
+# sudo cp /etc/haproxy/haproxy.cfg haproxy_default.backup
+
+
 #https://www.linuxtechi.com/install-configure-haproxy-on-ubuntu/
