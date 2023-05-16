@@ -105,6 +105,10 @@ $ sudo apt update
 
 # if u are using  a version of ubuntu lower than Ubuntu 18.04 then snap you most intall
 
+# chech your ubuntu version to decide.
+
+$ lsb_release -a
+
 $ sudo apt install snapd
 
 # Ensure that your version of snapd is up to date
@@ -131,7 +135,7 @@ $ sudo service haproxy status
 $ sudo service haproxy stop
 
 # Install ssl using certbot
-$ sudo certbot certonly --standalone --preferred-challenges http --http-01-port 80 -d exaple.com --non-interactive --agree-tos --email youremail@gmail.com
+$ sudo certbot certonly --standalone --preferred-challenges http --http-01-port 80 -d example.com -d www.example.com --non-interactive --agree-tos --email example@gmail.com
 
 # if error : Could not bind TCP port 80 because it is already in use by another process on this system (such as a web server). Please stop the program in question and then try again.
 

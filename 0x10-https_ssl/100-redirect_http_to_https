@@ -24,6 +24,8 @@ defaults
         mode    http
         option  httplog
         option  dontlognull
+        retries 3
+        option redispatch
         timeout connect 5000
         timeout client  50000
         timeout server  50000
@@ -34,15 +36,23 @@ defaults
         errorfile 502 /etc/haproxy/errors/502.http
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
+        option forwardfor
+        option http-server-close
 
-frontend www-http
-        bind *:80
-        bind *:443 ssl crt /etc/haproxy/certs/effiongsamuel.tech.pem
+frontend www-https
+        bind 0.0.0.0:443 ssl crt /etc/haproxy/certs/effiongsamuel.tech.pem
+        http-request set-header X-Forwarded-Proto https
         redirect scheme https code 301 unless { ssl_fc }
+        acl    letsencrypt-acl path_beg /.well-known/acme-challenge/
+        use_backend letsencrypt-backend if letsencrypt-acl
         option forwardfor
         default_backend effiongsamuel_tech_backend
+
 
 backend effiongsamuel_tech_backend
         balance roundrobin
         server web-01 100.26.49.35:80 check
         server web-02 52.73.34.245:80 check
+
+backend letsencrypt-backend
+        server letsencrypt 100.25.135.9:80
