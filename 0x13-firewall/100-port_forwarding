@@ -10,8 +10,10 @@
 
 *nat
 :PREROUTING ACCEPT [0:0]
+:INPUT ACCEPT [0:0]
+:OUTPUT ACCEPT [3:353]
+:POSTROUTING ACCEPT [3:353]
 -A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80
-COMMIT
 
 # Don't delete these required lines, otherwise there will be errors
 *filter
