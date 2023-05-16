@@ -4,6 +4,8 @@ ll /etc/ufw
 
 sudo vi /etc/ufw/before.rules
 
+#add before filter rule check read me.
+
 ls /etc | grep sysctl.
 
 sudo vi /etc/sysctl.conf
