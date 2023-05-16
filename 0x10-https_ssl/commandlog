@@ -13,38 +13,38 @@ Stop your webserver, then run this command to get a certificate. Certbot will te
 #No, I need to keep my web server running.
 If you have a webserver that's already using port 80 and don't want to stop it while Certbot runs, run this command and follow the instructions in the terminal ===> sudo certbot certonly --webroot
 
+# use 
 sudo certbot certonly --standalone --preferred-challenges http --http-01-port 80 -d effiongsamuel.tech -d www.effiongsamuel.tech
-sudo ls /etc/letsencrypt/live/your_domain_name
+
+# or 
+sudo certbot certonly --standalone --preferred-challenges http --http-01-address 54.237.124.39 --http-01-port 80 -d effiongsamuel.tech --non-interactive --agree-tos --email samueleffiongjacob@gmail.com
+
+#or 
+sudo certbot certonly --standalone --preferred-challenges http --http-01-port 80 -d effiongsamuel.tech --non-interactive --agree-tos --email samueleffiongjacob@gmail.com
+
+#Could not bind TCP port 80 because it is already in use by another process on this system (such as a web server). Please stop the program in question and then try again.
+
+# then run =======> 
+#sudo lsof -i tcp:80
+#sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
+
+# run comman above .
+
+
+
+sudo ls /etc/letsencrypt/live/effiongsamuel.tech
 sudo mkdir -p /etc/haproxy/certs
-DOMAIN='example.com' sudo -E bash -c 'cat /etc/letsencrypt/live/$DOMAIN/fullchain.pem /etc/letsencrypt/live/$DOMAIN/privkey.pem > /etc/haproxy/certs/$DOMAIN.pem'
+DOMAIN='effiongsamuel.tech' sudo -E bash -c 'cat /etc/letsencrypt/live/$DOMAIN/fullchain.pem /etc/letsencrypt/live/$DOMAIN/privkey.pem > /etc/haproxy/certs/$DOMAIN.pem'
+
+# or 
+sudo cat "/etc/letsencrypt/live/example.com/fullchain.pem" "/etc/letsencrypt/live/example.com/privkey.pem" > "/etc/ssl/effiongsamuel.tech.pem"
+
 sudo chmod -R go-rwx /etc/haproxy/certs
 sudo nano /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
 
 /etc/haproxy/certs/effiongsamuel
 
-sudo certbot certonly --webroot
-samueleffiong685@gmail.com
-/etc/letsencrypt
-
-sudo certbot certonly --standalone --preferred-challenges http --http-01-port 80 -d linuxtechgeek.info -d www.linuxtechgeek.info
-
-sudo certbot certonly --standalone --preferred-challenges http --http-01-port 80 -d effiongsamuel.tech -d www.effiongsamuel.tech
-
-sudo certbot certonly --standalone --preferred-challenges http --http-01-port 8080 -d effiongsamuel.tech -d www.effiongsamuel.tech
-#or
-
-sudo certbot certonly --standalone -d effiongsamuel.tech --non-interactive --http-01-port=8888
-
-sudo certbot certonly --standalone  --preferred-challenges http --http-01-port 80
-certbot-auto certonl
-
-
-
-
-sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
-
-![Could not bind TCP port 80 because it is already in use by another process on this system (such as a web server)](https://9to5tutorial.com/could-not-bind-tcp-port-80-because-it-is-already-in-use-by-another-process-on-this-system-such-as-a-web-server)
 
 
 see what is the port
@@ -53,7 +53,7 @@ sudo lsof -i tcp:80
 kill it
 sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
 
-contunu
+use full website
 
 https://certbot.eff.org/instructions?ws=haproxy&os=ubuntufocal
 
@@ -61,57 +61,16 @@ https://dev.to/phansch/setting-up-ssl-certificates-for-haproxy-with-certbot-bb0
 
 https://serversforhackers.com/c/letsencrypt-with-haproxy
 
-results=$(Sudo lsof -i :80 |grep  ipv4)
+https://markontech.com/linux/install-lets-encrypt-ssl-on-haproxy/
 
+https://www.linuxtechi.com/how-to-setup-haproxy-ssl-termination-ubuntu/
 
-//using letsencrypt web.
-/etc/letsencrypt
-sudo add-apt-repository -y ppa:certbot/certbot
-sudo apt-get update
-sudo apt-get install -y certbot
-
-sudo certbot certonly --standalone -d www.effiongsamuel.tech --non-interactive --agree-tos --email samueleffiong685@gmail.com  --http-01-port=8888
-
-sudo certbot certonly --standalone --preferred-challenges http --http-01-port 80 -d linuxtechgeek.info -d www.linuxtechgeek.info
-sudo certbot certonly --standalone --preferred-challenges http --http-01-port 80 -d effiongsamuel.tech -d www.effiongsamuel.tech
-sudo certbot certonly --standalone --preferred-challenges http --TLS-SNI-01-port 443 -d effiongsamuel.tech -d www.effiongsamuel.tech
-
- TLS-SNI-01
--d effiongsamuel.tech
- /etc/letsencrypt
-  /etc/letsencrypt
 
 '/etc/haproxy/haproxy.cfg'
 
-## error message
-Saving debug log to /var/log/letsencrypt/letsencrypt.log
-Plugins selected: Authenticator standalone, Installer None
-Obtaining a new certificate
-Performing the following challenges:
-http-01 challenge for effiongsamuel.tech
-Waiting for verification...
-Challenge failed for domain effiongsamuel.tech
-http-01 challenge for effiongsamuel.tech
-Cleaning up challenges
-Some challenges have failed.
-
-IMPORTANT NOTES:
- - The following errors were reported by the server:
-
-   Domain: effiongsamuel.tech
-   Type:   unauthorized
-   Detail: 34.202.157.245: Invalid response from
-   http://effiongsamuel.tech/.well-known/acme-challenge/YBHC2847ChCb24KngrwN_dBY5OHcB5UdhSvuRmVFIZU:
-   404
-
-   To fix these errors, please make sure that your domain name was
-   entered correctly and the DNS A/AAAA record(s) for that domain
-   contain(s) the right IP address.
 
 
 
-# new way.
-https://www.linuxtechi.com/how-to-setup-haproxy-ssl-termination-ubuntu/
 
 "
 defaults

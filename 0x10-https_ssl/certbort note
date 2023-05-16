@@ -1,0 +1,11 @@
+Successfully received certificate.
+Certificate is saved at: /etc/letsencrypt/live/effiongsamuel.tech/fullchain.pem
+Key is saved at:         /etc/letsencrypt/live/effiongsamuel.tech/privkey.pem
+This certificate expires on 2023-08-14.
+These files will be updated when the certificate renews.
+Certbot has set up a scheduled task to automatically renew this certificate in the background.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+If you like Certbot, please consider supporting our work by:
+ * Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+ * Donating to EFF:                    https://eff.org/donate-le
