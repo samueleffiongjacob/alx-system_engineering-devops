@@ -39,6 +39,7 @@ frontend www-http
         bind *:80
         bind *:443 ssl crt /etc/haproxy/certs/effiongsamuel.tech.pem
         redirect scheme https code 301 unless { ssl_fc }
+        option forwardfor
         default_backend effiongsamuel_tech_backend
 
 backend effiongsamuel_tech_backend
