@@ -3,7 +3,11 @@
 always check if firwall is open with the ==> telnet IP port
 e.g telnet web-02.holberton.online 22
 
-![what is firewall](https://en.wikipedia.org/wiki/Firewall_%28computing%29)
+- [what is firewall](https://en.wikipedia.org/wiki/Firewall_%28computing%29)
+
+- [SOME RESOURCE](https://www.cyberciti.biz/faq/how-to-configure-firewall-with-ufw-on-ubuntu-20-04-lts/#:~:text=How%20To%20Configure%20Firewall%20with%20UFW%20on%20Ubuntu,Step%206%20%E2%80%93%20Verify%20status%20of%20UFW%20)
+
+- [BETTER FIRE WALL WITH UNDERSTANDING](https://linuxize.com/post/how-to-setup-a-firewall-with-ufw-on-ubuntu-20-04/)
 
 ![fire_wall](https://www.compuquip.com/hs-fs/hubfs/images/blog-images/firewall-monitoring-best-practices.jpg?width=600&name=firewall-monitoring-best-practices.jpg)
 
@@ -38,6 +42,11 @@ $ sudo ufw status
 # if the result shows enabled then disable it
 $ sudo ufw disable
 
+# You can list all application profiles available on your server by typing:
+$ sudo ufw app list
+
+# To find more information about a specific profile and included rules, use the following command:
+$ sudo ufw app info 'Nginx Full'
 # configuring firwall rules
 $ sudo ufw default deny incoming
 $ sudo ufw default allow outgoing
