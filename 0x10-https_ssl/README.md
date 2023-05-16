@@ -146,11 +146,13 @@ $ sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
 # directory. To view them do the below
 $ sudo ls /etc/letsencrypt/live/example.com
 
+#But before you do so, create a directory where all the files will be placed.
 $ sudo mkdir -p /etc/haproxy/certs
 
+#Next, create the combined file using the cat command as follows.
 $ DOMAIN='example.com' sudo -E bash -c 'cat /etc/letsencrypt/live/$DOMAIN/fullchain.pem /etc/letsencrypt/live/$DOMAIN/privkey.pem > /etc/haproxy/certs/$DOMAIN.pem'
 
-# give permission to the above folder
+# Next, secure the file by assign the following permissions to the directory using
 $ sudo chmod -R go-rwx /etc/haproxy/certs
 
 #     or this
@@ -158,21 +160,28 @@ $ sudo chmod -R go-rwx /etc/haproxy/certs
 # /etc/ssl/private
 $ sudo cat "/etc/letsencrypt/live/example.com/fullchain.pem" "/etc/letsencrypt/live/example.com/privkey.pem" > "/etc/ssl/example.com.pem"
 
-# Now go to your haproxy config file to add a the path to your certificate
+# Now access the HAProxy configuration file.
 $ sudo vi /etc/haproxy/haproxy.cfg
 
 # add your config file in haproxy inside the above open
   
 frontend effiongsamuel-tech-backend
     bind *:80
+    redirect scheme https if !{ ssl_fc }
     default_backend effiongsamuel-tech-backend
 
 backend effiongsamuel-tech-backend
     balance roundrobin
     server 139694-web-01 1033.2956.178.1:80 check # your server ip
     server 139694-web-02 34.2302.15457.245:80 check # your server ip
+
+#Save the changes and exit the configuration file. Be sure to confirm that the syntax for HAProxy is okay using the following syntax.
+
+$  sudo haproxy -f /etc/haproxy/haproxy.cfg -c
 # Then reload haproxy
-$ sudo service haproxy reload
+$ sudo service haproxy restart
+
+$ sudo service haproxy status
 ```
 _If you don't have HAProxy installed just copy and run this on your terminal and save yourself the hassle_
 

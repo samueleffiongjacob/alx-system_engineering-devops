@@ -40,7 +40,7 @@ DOMAIN='effiongsamuel.tech' sudo -E bash -c 'cat /etc/letsencrypt/live/$DOMAIN/f
 sudo cat "/etc/letsencrypt/live/example.com/fullchain.pem" "/etc/letsencrypt/live/example.com/privkey.pem" > "/etc/ssl/effiongsamuel.tech.pem"
 
 sudo chmod -R go-rwx /etc/haproxy/certs
-sudo nano /etc/haproxy/haproxy.cfg
+sudo vi /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
 
 /etc/haproxy/certs/effiongsamuel
