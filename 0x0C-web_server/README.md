@@ -114,6 +114,9 @@ For stsep by step guide on how to go about the installation and configuration, y
 
 - Proceed to video -> [Watch Video](#)
 
+## useful resource
+
+[ngix](https://docs.nginx.com/nginx/admin-guide/web-server/web-server/)
 ## Installing Needed Packages
 
 ```bash
@@ -140,8 +143,12 @@ $ sudo vi /etc/nginx/sites-available/default
 
 server {
   listen 80 default_Server;
+  listen [::]:80 default_Server
   root /var/www/html;
   index index.html index.htm index.nginx-debian.html;
+
+# add a server headed to the the config
+$ add_header X-Server-By 153318-web-01
 
 # if you have a domain name replace '_' with it
   server_name _;
@@ -158,8 +165,27 @@ server {
   }
 }
 
-```
+# Alway confirm that your nginx configuration is valid, suceesful and tested.
+$ sudo nginx -t
 
+# To archieve a folder for backup
+$ sudo tar -czf /tmp/web01.tar.gz /alx/home/ubuntu/etc/var/www/root
+
+# backup server to avoid wonderful stories
+$ scp ubuntu@<server_ip>: <path_to_file> <path_to_save_tranferred_file> -i <path_to_key>
+
+# Usuage 
+
+$ scp ubuntu@web01:/temp/webo1.tar.gz
+
+# To view content of an archive file:
+
+$ tar -tf webo1.tar.gz  # not web01.tar.gz is folder archive for backup
+
+# To extract the content of afile for tar
+
+$ tar -xf web01.tar.gz <path_to_file>
+```
 coupon for .tech domain once(Holb2023nmz07n)
 
 how to creat ssh :ssh-keygen -t rsa
