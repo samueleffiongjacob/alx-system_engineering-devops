@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-# This Script connects to the server 100.26.178.1 using the users private key
-# stored in a file school Found in the users home directory
-
-ssh -i ~/.ssh/id_rsa  ubuntu@54.237.124.39
-
-#ssh  ~/.ssh/school ubuntu@100.26.178.1  -----> use only if u accepted default
