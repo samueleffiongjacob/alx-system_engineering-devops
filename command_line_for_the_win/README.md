@@ -79,3 +79,7 @@ Complete the 9 next tasks, getting to 27 total.
 Ready for a manual review
 
 **[Link to your project review](https://intranet.alxswe.com/corrections/22838110/correct)**
+
+References :
+[SFTP Guide](https://man.openbsd.org/sftp)
+[SFTP File Transfer Tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-sftp-to-securely-transfer-files-with-a-remote-server)
