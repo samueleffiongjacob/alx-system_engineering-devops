@@ -1,2 +1,6 @@
 #!/bin/bash
 mv [[:upper:]]* /tmp/u
+
+# wc -l 102-tree ===> would print second active directory
+# head -1 102-tree 
+# tr -cd ' ' < 102-tree | wc -c # you do not have to understand this yet, but t
