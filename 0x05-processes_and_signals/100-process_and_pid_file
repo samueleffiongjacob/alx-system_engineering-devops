@@ -22,3 +22,6 @@ do
   trap 'echo "I hate the kill command" && terminator' SIGTERM
   trap 'terminator' SIGQUIT
 done
+
+# the below command would kill the above process 
+# sudo pkill -f 100-process_and_pid_file

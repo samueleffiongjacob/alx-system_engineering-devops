@@ -39,3 +39,18 @@ then
 else
     echo "Usage: manage_my_process {start|stop|restart}"
 fi
+
+
+# to run the above command :
+# sudo ./101-manage_my_process 
+# sudo ./101-manage_my_process  start
+# tail -f -n0 /tmp/my_process 
+# terminate with ctrl c
+# ./101-manage_my_process stop
+#  cat /var/run/my_process.pid 
+# tail -f -n0 /tmp/my_process 
+# sudo ./101-manage_my_process start
+# cat /var/run/my_process.pid 
+# sudo ./101-manage_my_process restart
+# cat /var/run/my_process.pid 
+# tail -f -n0 /tmp/my_process 
