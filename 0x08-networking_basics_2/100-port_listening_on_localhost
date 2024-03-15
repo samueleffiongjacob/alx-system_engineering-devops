@@ -2,3 +2,5 @@
 # Listens on port 98 on localhost.
 
 nc -l localhost 98
+
+# Write a Bash script that listens on port 98 on localhost.
