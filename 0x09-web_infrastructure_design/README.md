@@ -1,6 +1,15 @@
 # Web infrastructure design
 
-![web_structure](https://media.geeksforgeeks.org/wp-content/uploads/20220817182651/NetworkInfrastructure1.png)
+## Resource
+
+- [What is a database](https://www.oracle.com/ke/database/what-is-database/)  
+- [What’s the difference between a web server and an app server?](https://www.infoworld.com/article/2077354/app-server-web-server-what-s-the-difference.html)  
+- [DNS record types](https://www.site24x7.com/learn/dns-record-types.html)  
+- [High availability cluster (active-active/active-passive)](https://docs.oracle.com/cd/E17904_01/core.1111/e10106/intro.htm#ASHIA714)  
+- [What is HTTPS](https://www.instantssl.com/http-vs-https)  
+- [What is a firewall](https://www.webopedia.com/definitions/firewall/)  
+
+![web_structure](./NetworkInfrastructure1.png)
 
 Web Applications Infrastructure/Web Infrastructure also called internet infrastructure is the physical hardware, transmission media, and software used to interconnect computers and users on the Internet.
 
@@ -15,10 +24,10 @@ Web Applications Infrastructure/Web Infrastructure also called internet infrastr
 - You must be able to explain `system redundancy`
 - Know all the mentioned acronyms: `LAMP`, `SPOF`, `QPS`
 
-
 ## Simple Web Infrastructure
 
-![](https://miro.medium.com/max/720/1*xKd1CchSaSKV83Oizju8kg.webp)
+![serva 2](./serva%202.png)  
+[see lamp stack](https://en.wikipedia.org/wiki/LAMP_%28software_bundle%29)  
 
 - 1 server
 - 1 web server `(Nginx)`
@@ -29,7 +38,7 @@ Web Applications Infrastructure/Web Infrastructure also called internet infrastr
 
 ## Distrubuted Web Infrasture
 
-![](https://upload.wikimedia.org/wikipedia/commons/5/55/Network_Architecture_Diagram_-_Distributed_Web_Infrastructure.pdf)
+![network diagram](./Network_Architecture_Diagram_-_Distributed_Web_Infrastructure-1.png)
 
 - 2 servers
 - 1 web server `(Nginx)`
@@ -40,8 +49,8 @@ Web Applications Infrastructure/Web Infrastructure also called internet infrastr
 
 ## Monitored web infrastructure
 
-![](https://miro.medium.com/max/720/1*t7oSAWV7gtp-WSRNXfM9Hw.webp)
+![3 server](./3%20server.png)
 
 - 3 firewalls
-- 1 SSL certificate to serve www.foobar.com over HTTPS
+- 1 SSL certificate to serve [see foobar](www.foobar.com) over HTTPS  
 - 3 monitoring clients (data collector for Sumologic or other monitoring services)
