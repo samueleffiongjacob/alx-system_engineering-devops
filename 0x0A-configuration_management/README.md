@@ -93,4 +93,11 @@ $ pip3 install --force-reinstall Flask==2.1.0 Werkzeug==2.0.3
 
 # re apply build
 # check version
+
+# kill running terminal
+# with a bash command and puppet .this process require 2 terminall.. 
+# first terminal your bash command and second terminal your puppet command
+
+$ ./killmenow
+$ puppet apply 2-execute_a_command.pp
 ```
