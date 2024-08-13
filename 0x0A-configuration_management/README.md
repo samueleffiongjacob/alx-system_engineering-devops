@@ -57,3 +57,40 @@ Follow the above instructions to install puppet and puppet-linter then watch the
 [puppet old](https://www.puppet.com/docs/puppet/5.5/puppet_index.html)
 
 [puppet new](https://www.puppet.com/docs/puppet/5.5/puppet_index.html)
+
+### Excuting task
+
+```bash
+# first thing check version
+$ puppet-lint --version
+
+# create a file 
+$  puppet-lint 0-create_a_file.pp
+
+# appy my change
+$  puppet apply 0-create_a_file.pp
+
+# confirm file path
+$ ls -l /tmp/school
+
+# view what in the path
+$ cat /tmp/school
+
+# apply file second config
+$ puppet apply 1-install_a_package.pp
+
+# verify installation
+$ flask --version
+
+# if error Check Installed Versions: First, verify the versions of Flask and Werkzeug that are installed:
+
+$ pip3 show flask werkzeug
+
+
+# Reinstall Flask and Werkzeug: To make sure there are no leftover issues, you can force reinstall both packages. eg :
+
+$ pip3 install --force-reinstall Flask==2.1.0 Werkzeug==2.0.3
+
+# re apply build
+# check version
+```
