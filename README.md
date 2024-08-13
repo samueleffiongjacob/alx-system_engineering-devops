@@ -2,6 +2,8 @@
 
 # 0x00 ALX System Engineering and DevOps 💥
 
+![](https://www.codemotion.com/magazine/wp-content/uploads/2020/09/devops-1024x527.png)
+
 >Learning bash, scripting, networking and web infra right now, been wanting to get on this. It's going to be FUN !!.
 
 ## About
@@ -36,19 +38,15 @@
 - [0x15](./0x15-api) : API.
 - [Attack is the best defense.](./attack_is_the_best_defense)
 
-
-
 how to creat ssh :ssh-keygen -t rsa
 
 Load-balancing -> [Read me](https://www.thegeekstuff.com/2016/01/load-balancer-intro/)
-
 
 Load-balancing algorithms-> [Read me](https://community.f5.com/t5/technical-articles/intro-to-load-balancing-for-developers-the-algorithms/ta-p/273759)
 
 In engineering, redundancy is the intentional duplication of critical components or functions of a system with the goal of increasing reliability of the system, usually in the form of a backup or fail-safe, or to improve actual system performance, such as in the case of GNSS receivers, or multi-threaded computer processing. -> [Read me](https://en.wikipedia.org/wiki/Redundancy_%28engineering%29)
 
 Introduction to load-balancing and HAproxy -> [Read me](https://www.digitalocean.com/community/tutorials/an-introduction-to-haproxy-and-load-balancing-concepts)
-
 
 HTTP header -> [Read me](https://www.techopedia.com/definition/27178/http-header)
 
@@ -58,14 +56,13 @@ redundancy-> [Read me](https://github.com/koalaman/shellcheck/wiki/Ignore)
 
 SC2154-> [Read me](https://github.com/koalaman/shellcheck/wiki/SC2154)
 
-
 How do I assign a static hostname to an Amazon EC2 instance running Ubuntu Linux? -> [Read me](https://repost.aws/knowledge-center/linux-static-hostname)
 
 Change the hostname of your Amazon Linux instance -> [Read me](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/set-hostname.html)
 
 ## DNS DETAILS
-A Records DNS -> [Read me](https://support.dnsimple.com/articles/a-record/)
 
+A Records DNS -> [Read me](https://support.dnsimple.com/articles/a-record/)
 
 CNAME record dns -> [Read me](https://en.wikipedia.org/wiki/CNAME_record)
 
