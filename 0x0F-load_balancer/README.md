@@ -31,29 +31,29 @@ $ sudo apt-get install -y haproxy=1.6.\*
 
 $ sudo vi /etc/haproxy/haproxy.cfg
 # Add the below code to the file opened using vi editor
-frontend sammykingx.tech
+frontend effiongsamuel.tech
         bind 0:80
  mode http
         default_backend web_servers
 
 backend web_servers
         balance roundrobin
-        server 64820-web-01 100.26.152.157:80
-        server 64820-web-02 52.86.102.6:80
+        server 139694-web-01 3.85.141.200:80 check
+        server 139694-web-02 54.236.190.52:80 check
 ~
 ~
 :wq(to save and exit)
 --------------- or ----------------------- 
 $ echo '
-frontend sammykingx.tech
+frontend effiongsamuel.tech
         bind 0:80
  mode http
         default_backend web_servers
 
 backend web_servers
         balance roundrobin
-        server 64820-web-01 100.26.152.157:80
-        server 64820-web-02 52.86.102.6:80
+        server 139694-web-01 3.85.141.200:80 check
+        server 139694-web-02 54.236.190.52:80 check
 ' >> /etc/haproxy/haproxy.cfg
 
 $ service haproxy restart
@@ -62,3 +62,9 @@ $ service haproxy restart
 # install_haproxy_safely or 1-install_load_balancer to 
 # configure yours on a fly.
 ```
+
+## resource
+
+[haproxy](https://www.techtarget.com/searchnetworking/definition/HAProxy)
+[haproxy docs](https://www.haproxy.com/documentation/haproxy-configuration-manual/latest/)
+[digital ocean](https://www.digitalocean.com/community/tutorials/an-introduction-to-haproxy-and-load-balancing-concepts)
