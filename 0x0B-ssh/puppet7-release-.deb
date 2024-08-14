@@ -1,0 +1,14 @@
+<html>
+<head><title>404 Not Found</title></head>
+<body>
+<h1>404 Not Found</h1>
+<ul>
+<li>Code: NoSuchKey</li>
+<li>Message: The specified key does not exist.</li>
+<li>Key: puppet7-release-.deb</li>
+<li>RequestId: XNAZ96JN0ZB9S0Z1</li>
+<li>HostId: ZL/qjYmf3PRLX97RP4yWKpujp8a9SGMSInWd7nQw6xUIMvTxMD8UtYshOxOqHuV+VVIo0E1cPbU=</li>
+</ul>
+<hr/>
+</body>
+</html>
