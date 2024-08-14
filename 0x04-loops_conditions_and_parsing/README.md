@@ -1,4 +1,5 @@
-# Shell Loops, Conditions,
+# Shell Loops, Conditions
+
 ![](https://phoenixnap.com/kb/wp-content/uploads/2021/12/individual.sh-for-loop-script.png)
 
 ## Learning objectives
@@ -30,3 +31,11 @@
 - `while`
 - `until`
 - `if`
+
+## resource
+
+[ssh](https://askubuntu.com/questions/61557/how-do-i-set-up-ssh-authentication-keys)
+
+```bash
+ssh-keygen -t rsa
+```
