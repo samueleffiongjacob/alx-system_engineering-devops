@@ -78,6 +78,10 @@ __DNS Record Types__
 
 [ref1](https://datatracker.ietf.org/doc/html/rfc7540)
 
+[intall ngix](https://askubuntu.com/questions/672892/what-does-y-mean-in-apt-get-y-install-command)
+
+[replace varable with seed](effiongsamuel.tech)
+
 ## Installing Needed Packages
 
 ```bash
@@ -125,4 +129,7 @@ server {
 }
 
 ```
+
 ssh mywebserver
+/home/ubuntu
+ubuntu@139694-web-01:~$

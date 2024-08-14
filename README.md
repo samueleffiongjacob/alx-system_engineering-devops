@@ -80,10 +80,3 @@ What’s an NS Record? -> [Read me](https://support.dnsimple.com/articles/ns-rec
 SOA Records  -> [Read me](https://support.dnsimple.com/articles/soa-record/)
 
 what the point having url  -> [Read me](https://serverfault.com/questions/145777/what-s-the-point-in-having-www-in-a-url)
-
-
-
-/home/ubuntu
-ubuntu@139694-web-01:~$ pwd
-
-[intall ngix](https://askubuntu.com/questions/672892/what-does-y-mean-in-apt-get-y-install-command)
