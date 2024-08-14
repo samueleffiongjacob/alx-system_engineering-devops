@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+# Configures a new HAProxy as a load balancer
+
+# Exit immediately if a command exits with a non-zero status
+set -e
+
+
+# Add HAProxy PPA:
+echo -e "Starting the process and adding HAProxy-2 PPA...\n"
+sudo add-apt-repository ppa:vbernat/haproxy-2.8
+echo -e "HAProxy-2 PPA added successfully...\n"
+
+# Update server
+echo -e "Starting server update...\n"
+sudo apt-get -y update
+echo -e "Server update completed successfully...\n"
+
+# Install HAProxy on the server
+echo -e "Starting HAProxy installation...\n"
+sudo apt-get -y install haproxy
+echo -e "HAProxy installation completed successfully...\n"
+
+# View version
+echo -e "HAProxy version:\n"
+haproxy -v
+
+# Configure HAProxy configuration file to distribute requests using a roundrobin algorithm
+echo -e "Starting HAProxy configuration...\n"
+echo '
+frontend effiongsamuel.tech
+        bind 0:80
+        default_backend web_servers
+
+backend web_servers
+        balance roundrobin
+        server 139694-web-01 3.85.141.200:80
+        server 139694-web-02 54.236.190.52:80
+        http-response add-header X-Served-By effiongsamuel.tech
+' | sudo tee /etc/haproxy/haproxy.cfg
+echo -e "HAProxy configuration completed successfully...\n"
+
+#>> /etc/haproxy/haproxy.cfg // this would override
+#  | sudo tee -a /etc/haproxy/haproxy.cfg // this would do it on a save mode
+
+# Restart HAProxy service
+echo -e "Reloading HAProxy...\n"
+sudo service haproxy restart
+echo -e "HAProxy process completed successfully...\n"
