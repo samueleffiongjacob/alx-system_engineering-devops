@@ -1,0 +1,27 @@
+wget https://apt.puppet.com/puppet7-release-focal.deb
+sudo dpkg -i puppet7-release-focal.deb
+sudo apt-get update
+sudo apt-get install puppet-agent
+export PATH=/opt/puppetlabs/bin:$PATH
+# intall location
+ ls /opt/puppetlabs/bin/
+#to ensure that the puppet command is available in all future sessions, you need to add the export command to your .bashrc or .bash_profile:
+echo 'export PATH=/opt/puppetlabs/bin:$PATH' >> ~/.bashrc
+
+# After adding this, apply the changes by sourcing the .bashrc file:
+source ~/.bashrc
+
+# version
+puppet --version
+
+# run it
+puppet apply 7-puppet_install_nginx_web_server.pp
+
+# check ngix status
+Check Nginx Status
+
+#. Verify the Root Page
+curl http://localhost/
+
+#Verify the Redirect
+curl -sI http://localhost/redirect_me/
