@@ -125,3 +125,4 @@ server {
 }
 
 ```
+ssh mywebserver

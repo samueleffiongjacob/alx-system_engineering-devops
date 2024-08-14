@@ -82,3 +82,6 @@ SOA Records  -> [Read me](https://support.dnsimple.com/articles/soa-record/)
 what the point having url  -> [Read me](https://serverfault.com/questions/145777/what-s-the-point-in-having-www-in-a-url)
 
 Ignore  -> [Read me]()
+
+/home/ubuntu
+ubuntu@139694-web-01:~$ pwd
