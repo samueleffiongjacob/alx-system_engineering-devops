@@ -102,6 +102,10 @@ $ sudo service haproxy stop
 # Install ssl using certbot
 $ sudo certbot certonly --standalone
 
+# to add another
+sudo certbot certonly --standalone -v
+
+
 # Follow the instrustions accurately, at the end please take note of the
 # Location of your SSL Keys. Usually going to default to the /etc/letsencrypt
 # when below shows: 
