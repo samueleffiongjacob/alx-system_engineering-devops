@@ -130,6 +130,3 @@ server {
 
 ```
 
-ssh mywebserver
-/home/ubuntu
-ubuntu@139694-web-01:~$
