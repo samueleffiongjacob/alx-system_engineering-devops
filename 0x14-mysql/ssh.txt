@@ -1,0 +1,13 @@
+mywebserver
+mywebserver2
+loadman
+echo "" >> ~/.ssh/authorized_keys
+
+
+ssh mywebserver
+/home/ubuntu
+ubuntu@139694-web-01:~$
+
+web one: 3.85.141.200
+web 2: 54.236.190.52
+lb : 34.202.234.6
