@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+# A Bash script to backup the 'tyrell_corp' MySQL database using mysqldump and tar.
+# Usage: ./mysql_backup.sh <mysql_password>
+
+# Check if the password is provided
+if [ -z "$1" ]; then
+    echo "Usage: $0 <mysql_password>"
+    exit 1
+fi
+
+# Define the password
+MYSQL_PASSWORD=$1
+
+# Define the backup filename using the current date
+BACKUP_FILE="tyrell_corp_backup_$(date +%d-%m-%Y).sql"
+ARCHIVE_FILE="tyrell_corp_backup_$(date +%d-%m-%Y).tar.gz"
+
+# Perform the database backup
+mysqldump -uroot -p"$MYSQL_PASSWORD" --databases tyrell_corp --add-drop-database --routines --triggers --events > "$BACKUP_FILE"
+
+# Check if the mysqldump command was successful
+if [ $? -eq 0 ]; then
+    echo "Database backup successful. Creating archive..."
+
+    # Create a gzipped tar archive of the SQL backup
+    tar -czvf "$ARCHIVE_FILE" "$BACKUP_FILE"
+
+    # Check if the tar command was successful
+    if [ $? -eq 0 ]; then
+        echo "Backup archived successfully as $ARCHIVE_FILE"
+        
+        # Remove the SQL file after archiving if you want to keep only the tar.gz file
+        rm "$BACKUP_FILE"
+    else
+        echo "Failed to archive the backup file."
+    fi
+else
+    echo "Database backup failed."
+fi
