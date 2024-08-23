@@ -1,3 +1,33 @@
+samueleffiong@SAMUELEFFIONG:~/.ssh$ ls
+authorized_keys  config  id_ed25519  id_ed25519.pub  id_rsa_webserver  id_rsa_webserver.pub  known_hosts
+samueleffiong@SAMUELEFFIONG:~/.ssh$ cat config
+```
+Host github.com
+  User git
+  Hostname github.com
+  IdentityFile ~/.ssh/id_ed25519
+  IdentitiesOnly yes
+
+
+Host mywebserver
+    HostName 3.85.141.200
+    User ubuntu
+    IdentityFile ~/.ssh/id_rsa_webserver
+
+
+Host mywebserver2
+    HostName 54.236.190.52
+    User ubuntu
+    IdentityFile ~/.ssh/id_rsa_webserver
+
+
+Host loadman
+    HostName 34.202.234.6
+    User ubuntu
+    IdentityFile ~/.ssh/id_rsa_webserver
+```
+samueleffiong@SAMUELEFFIONG:~/.ssh$
+
 mywebserver
 mywebserver2
 loadman
@@ -11,3 +41,10 @@ ubuntu@139694-web-01:~$
 web one: 3.85.141.200
 web 2: 54.236.190.52
 lb : 34.202.234.6
+
+
+local: 172.23.64.164
+
+
+# moving made easy:
+ scp mywebserver2:~/export_db_name.sql /home/samueleffiong/Desktop/export_db_name.sql

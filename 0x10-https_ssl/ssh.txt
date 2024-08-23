@@ -11,3 +11,9 @@ ubuntu@139694-web-01:~$
 web one: 3.85.141.200
 web 2: 54.236.190.52
 lb : 34.202.234.6
+
+# moving made easy:
+ scp mywebserver2:~/export_db_name.sql /home/samueleffiong/Desktop/export_db_name.sql
+
+ # or remote machine directly: 
+scp ~/export_db_name.sql ubuntu@54.236.190.52:~/ #

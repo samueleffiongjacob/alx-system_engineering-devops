@@ -1,0 +1,64 @@
+local ip : 172.23.64.164
+
+
+mywebserver
+mywebserver2
+loadman
+for local
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDa+HxAwU+JldZP7wtUoAO1bst0akd9Y0CVsbDu3nQfY82AX8FY2EMrcQZFX0txgZDZCuymyBjvzK76KrQaezjCSQj01a4VSPZ7T0enFhLt+WsRtsk5rQ2TAvtM+lZNB2wSLfVmJw3bOQXGhGipDebMuB13k0Fl8vFJvlyJnDAKxbsOjJWviXP2+5D2+aFRqg+FtjiKnORloINUXhVDnyBkYRcSRskSMGryzgFHoSuTL7TOZRM4XzvnOke8TO3PbX8aKR2+iypZAq0gf+XFZ3u4zv73EeV0LG2vjzmUKaBVLR1XAmGq01nzzHtnUFNsPFd1TeqYcZ5S0I4+BG96c83vddbBNgAA0fjs2kUZlDIKv3VQ5zJ/D7p4LeitRPX//jiB2ewVcoFMGItXUSzfR0i0xF2hXGY2ltBcretjbFC1IoKXSNFssESRPLXLiw88VF5NiH5udPGK6eaYHQdPbGS/ZHgdmcBvQf2dS6Naj1ZoTJ2erBcHKohLZ1irnnA6j8kCoZWrpj4EftqWFjQA2aWhMwKx2j9105ip4D5gapIOssKhP5oWNYOL4OTQhBfdPwVKNNcVbiiLDFSBe+AZKHqv1pUNq3zsHTnbKaVuJgS3QoCYhB29YZ89NNiyQsV1ovJmCVRPpXQlMruFCMGIXCDYS2O65KHyYryGeSj1AsH79Q== ubuntu@139694-web-01" >> ~/.ssh/authorized_keys
+echo "" >> ~/.ssh/authorized_keys
+echo "" >> ~/.ssh/authorized_keys
+ssh mywebserver
+/home/ubuntu
+ubuntu@139694-web-01:~$
+
+web one: 3.85.141.200
+web 2: 54.236.190.52
+lb : 34.202.234.6
+
+samueleffiong@SAMUELEFFIONG:~/.ssh$ ls
+authorized_keys  config  id_ed25519  id_ed25519.pub  id_rsa_webserver  id_rsa_webserver.pub  known_hosts
+
+# create a config file and but below 
+samueleffiong@SAMUELEFFIONG:~/.ssh$ cat config
+Host github.com
+  User git
+  Hostname github.com
+  IdentityFile ~/.ssh/id_ed25519
+  IdentitiesOnly yes
+
+
+Host mywebserver
+    HostName 3.85.141.200
+    User ubuntu
+    IdentityFile ~/.ssh/id_rsa_webserver
+
+
+Host mywebserver2
+    HostName 54.236.190.52
+    User ubuntu
+    IdentityFile ~/.ssh/id_rsa_webserver
+
+
+Host loadman
+    HostName 34.202.234.6
+    User ubuntu
+    IdentityFile ~/.ssh/id_rsa_webserver
+
+samueleffiong@SAMUELEFFIONG:~/.ssh$
+
+
+mysql> CHANGE MASTER TO
+    -> MASTER_HOST='3.85.141.200',
+    -> MASTER_USER='replica_user',
+    -> MASTER_PASSWORD='replica_user_pwd',
+    -> MASTER_LOG_FILE'mysql-bin.000004',
+    -> MASTER_LOG_POS=154;
+
+
+CHANGE MASTER TO
+    MASTER_HOST='3.85.141.200',
+    MASTER_USER='replica_user',
+    MASTER_PASSWORD='replica_user_pwd',
+    MASTER_LOG_FILE='mysql-bin.000004',
+    MASTER_LOG_POS=154;
