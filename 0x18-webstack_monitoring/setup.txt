@@ -1,0 +1,66 @@
+DD_API_KEY=052133070f74185180467b80313da0a8 DD_SITE="us5.datadoghq.com" bash -c "$(curl -L https://install.datadoghq.com/scripts/install_script_agent7.sh)"
+
+DD_API_KEY=052133070f74185180467b80313da0a8 DD_SITE="us5.datadoghq.com" bash -c "$(curl -L https://install.datadoghq.com/scripts/install_script_agent7.sh)"DD_API_KEY=052133070f74185180467b80313da0a8 DD_SITE="us5.datadoghq.com" bash -c "$(curl -L https://install.datadoghq.com/scripts/install_script_agent7.sh)"
+
+
+DD_API_KEY=052133070f74185180467b80313da0a8 DD_SITE="us5.datadoghq.com" bash -c "$(curl -L https://install.datadoghq.com/scripts/install_script_agent7.sh)"
+
+--------------
+application key created: 4575412b88e63047cb4b409e8358a30e6d98896d
+Key ID
+71990686-081a-4cda-ada8-d427d48f4aaf
+--------------------------------------------
+
+api key: 052133070f74185180467b80313da0a8
+-------------------------------------------------------
+* Adding your API key to the Datadog Agent configuration: /etc/datadog-agent/datadog.yaml
+
+
+* Setting SITE in the Datadog Agent configuration: /etc/datadog-agent/datadog.yaml
+
+/usr/bin/systemctl
+* Starting the Datadog Agent...
+
+  Your Datadog Agent is running and functioning properly.
+  It will continue to run in the background and submit metrics to Datadog.
+  If you ever want to stop the Datadog Agent, run:
+
+      sudo systemctl stop datadog-agent
+
+  And to run it again run:
+
+      sudo systemctl start datadog-agent
+
+
+#!/usr/bin/env bash
+# This script fetches host details from the Datadog API using curl
+
+DD_APP_KEY='4575412b88e63047cb4b409e8358a30e6d98896d'
+DD_API_KEY='052133070f74185180467b80313da0a8'
+
+curl -X GET "https://api.datadoghq.com/api/v1/hosts" \
+    -H "Accept: application/json" \
+    -H "DD-API-KEY: ${DD_API_KEY}" \
+    -H "DD-APPLICATION-KEY: ${DD_APP_KEY}"
+
+
+mysql> CREATE USER 'datadog'@'%' IDENTIFIED BY 'replica_user_pwd';
+
+mysql -u datadog --password='replica_user_pwd' -e "show status" | \
+grep Uptime && echo -e "\033[0;32mMySQL user - OK\033[0m" || \
+echo -e "\033[0;31mCannot connect to MySQL\033[0m"
+
+
+# or
+
+mysql -u datadog -p -e "SHOW STATUS" 2>/dev/null | \
+grep Uptime > /dev/null && echo -e "\033[0;32mMySQL user - OK\033[0m" || \
+echo -e "\033[0;31mCannot connect to MySQL\033[0m"
+
+
+mysql> GRANT REPLICATION CLIENT ON *.* TO 'datadog'@'%' WITH MAX_USER_CONNECTIONS 5;
+
+
+mysql -u datadog --password='replica_user_pwd' -e "show slave status" && \
+echo -e "\033[0;32mMySQL grant - OK\033[0m" || \
+echo -e "\033[0;31mMissing REPLICATION CLIENT grant\033[0m"
