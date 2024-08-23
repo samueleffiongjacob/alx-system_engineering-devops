@@ -60,6 +60,9 @@ net.ipv4.ip_forward=1
 # then reload the sysctl configuration
 $ sudo sysctl -p
 $ sudo ufw reload
+# view config
+$ sudo ufw status verbose
+
 
 
 # congratulations !! you've done it
