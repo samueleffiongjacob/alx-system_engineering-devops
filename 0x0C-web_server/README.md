@@ -1,6 +1,6 @@
 # 0X0C - Web Server
 
-![](https://www.keil.com/pack/doc/mw/Network/html/http_server_block_diagram.png)
+![image](https://www.keil.com/pack/doc/mw/Network/html/http_server_block_diagram.png)
 
 Web servers consist of hardware and software that use Hypertext Transfer Protocol (HTTP) to respond to web users’ requests made via the World Wide Web.
 
@@ -28,23 +28,26 @@ $ ps axf
 
 [A good software engineer is a lazy software engineer, crazy right](https://www.techwell.com/techwell-insights/2013/12/why-best-programmers-are-lazy-and-act-dumb)
 
-![](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-sysadmin_devops/266/82VsYEC.jpg)
+![bit](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-sysadmin_devops/266/82VsYEC.jpg)
 
-__General Objectives__
- - what is the main role of a web server
- - What is a child process
- - Why web servers usually have a parent process and child processes
- - What are the main HTTP requests
+__General Objectives__ .
 
-__DNS__
- - What DNS stands for
- - What is DNS main role
+- what is the main role of a web server
+- What is a child process
+- Why web servers usually have a parent process and child processes
+- What are the main HTTP requests
 
-__DNS Record Types__
- - `A Records`
- - `CNAME`
- - `TXT Records`
- - `MX Records`
+__DNS__ .
+
+- What DNS stands for
+- What is DNS main role
+
+__DNS Record Types__ .
+
+- `A Records`
+- `CNAME`
+- `TXT Records`
+- `MX Records`
 
 - How the web works
 - `Nginx`
@@ -127,6 +130,3 @@ server {
  internal;
   }
 }
-
-```
-

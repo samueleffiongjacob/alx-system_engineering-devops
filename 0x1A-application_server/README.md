@@ -34,6 +34,12 @@ Your web infrastructure is already serving web pages via Nginx that you installe
 - edit the file 0-hello_route.py by replacing "/" with "airbnb_onepage"
 
 ```bash
+# Create It
+$ python3 -m venv venv
+$ pip install flask
+$ source venv/bin/activate
+$ pip install gunicorn
+
 (venv) ubuntu@64820-web-01:~/AirBnB_clone_v2$ python3 -m web_flask.0-hello_route
  * Serving Flask app '0-hello_route'
  * Debug mode: off
@@ -44,6 +50,19 @@ WARNING: This is a development server. Do not use it in a production deployment.
 Press CTRL+C to quit
 127.0.0.1 - - [10/Feb/2023 21:00:05] "GET /airbnb-onepage HTTP/1.1" 200 -
 
+# deactivate venv
+$ deactivate
+
+# task 0 test 
+# terminal0
+$gunicorn --bind 0.0.0.0:5000 web_flask.0-hello_route:app
+
+
+# task 1 test
+## check application terminal one
+$ gunicorn --bind 0.0.0.0:5000 web_flask.0-hello_route:app
+# terminal 2
+$  curl 127.0.0.1:5000/airbnb-onepage/
 ```
 
 __After__  .
@@ -52,3 +71,7 @@ __After__  .
 ubuntu@64820-web-01:~$ curl localhost:5000/airbnb_onepage
 Hello HBNB!ubuntu@64820-web-01:~$
 ```
+
+## server
+
+Now that you have your development environment set up, let’s get your production application server set up with Gunicorn on web-01, port 5000. You’ll need to install Gunicorn and any libraries required by your application. Your Flask application object will serve as a [WSGI](https://www.fullstackpython.com/wsgi-servers.html) entry point into your application. This will be your production environment. As you can see we want the production and development of your application to use the same port, so the conditions for serving your dynamic content are the same in both environments.
