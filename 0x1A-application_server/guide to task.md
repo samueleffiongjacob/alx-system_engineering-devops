@@ -218,6 +218,7 @@ $ ubuntu@139694-web-01:~/AirBnB_clone_v2$ curl 127.0.0.1:5000/airbnb-onepage/
 Hello HBNB!ubuntu@139694-web-01:~/AirBnB_clone_v2$
 $ 
 $ ubuntu@139694-web-01:~/AirBnB_clone_v2$ curl 127.0.0.1:5001/number_odd_or_even/6
+# 
 $ samueleffiong@SAMUELEFFIONG:~/Desktop$ curl 3.85.141.200/airbnb-dynamic/number_odd_or_even/899
 ```
 
