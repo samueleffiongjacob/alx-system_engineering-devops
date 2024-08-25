@@ -1,4 +1,10 @@
-# task 2
+# RESOURCE
+
+[NGINX docs :  Nginx Reverse Proxy.](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/#)
+[Understanding nginx location blocks and rewrite rules](https://blog.pixelastic.com/2013/09/27/understanding-nginx-location-blocks-rewrite-rules/)
+[digital ocean](https://blog.pixelastic.com/2013/09/27/understanding-nginx-location-blocks-rewrite-rules/)
+
+## task 2
 
 Step 1: Create a New Nginx Configuration File
 Create a new configuration file specifically for the /airbnb-onepage/ route under /etc/nginx/sites-available/. Let's call it airbnb-onepage.
@@ -222,8 +228,40 @@ $ ubuntu@139694-web-01:~/AirBnB_clone_v2$ curl 127.0.0.1:5001/number_odd_or_even
 $ samueleffiong@SAMUELEFFIONG:~/Desktop$ curl 3.85.141.200/airbnb-dynamic/number_odd_or_even/899
 ```
 
-## task 3
+## task 4
 
-[NGINX docs :  Nginx Reverse Proxy.](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/#)
-[Understanding nginx location blocks and rewrite rules](https://blog.pixelastic.com/2013/09/27/understanding-nginx-location-blocks-rewrite-rules/)
-[digital ocean](https://blog.pixelastic.com/2013/09/27/understanding-nginx-location-blocks-rewrite-rules/)
+```bash
+# run query
+$ cat setup_mysql_dev.sql | mysql -hlocalhost -uroot -
+$ echo "SHOW DATABASES;" | mysql -uhbnb_dev -p | grep hbnb_dev_db  # password: 
+$ cat setup_mysql_test.sql | mysql -hlocalhost -uroot -p # password: hbnb_test_pwd
+$ echo "SHOW DATABASES;" | mysql -uhbnb_test -p | grep hbnb_test_db
+# command 
+$ pip install flask
+$ pip install Flask-CORS
+$ pip install SQLAlchemy
+$ sudo apt-get install python3-dev default-libmysqlclient-dev build-essential
+$ sudo apt-get update
+$ sudo apt-get install pkg-config
+
+$ pip3 install mysqlclient
+$ python3 -c "import MySQLdb" # if no output or error installation succeful
+
+
+
+# task 1 : Never fail!
+$ python3 -m unittest discover tests 2>&1 | tail -1
+$ HBNB_ENV=test HBNB_MYSQL_USER=hbnb_test HBNB_MYSQL_PWD=hbnb_test_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_test_db HBNB_TYPE_STORAGE=db python3 -m unittest discover tests 2>&1 /dev/null | tail -n 1
+
+# task 2 :  Improve storage
+# let add dummy state 
+$ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./add_states.py
+
+# now Let's do this for your API task 4
+$  tmux new-session -d 'gunicorn --bind 0.0.0.0:5002 api.v1.app:app'
+$  curl 127.0.0.1:5002/api/v1/states
+#Local Terminal:
+$  curl 3.85.141.200/api/v1/states
+# on browser
+$ http://3.85.141.200/api/v1/states
+```
