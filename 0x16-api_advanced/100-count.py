@@ -14,9 +14,10 @@ def count_words(subreddit, word_list, instances={}, after=None):
     url = f"https://www.reddit.com/r/{subreddit}/hot/.json"
     headers = {"User-Agent": "linux:0x16.api.advanced:v1.0.0 (by /u/bdov_)"}
     params = {"after": after, "limit": 100}
-    
-    response = requests.get(url, headers=headers, params=params, allow_redirects=False)
-    
+
+    response = requests.get(url, headers=headers,
+                            params=params, allow_redirects=False)
+
     if response.status_code == 404:
         print("")
         return
@@ -28,7 +29,7 @@ def count_words(subreddit, word_list, instances={}, after=None):
     for child in children:
         title = child.get("data", {}).get("title", "").lower()
         words_in_title = title.split()
-        
+
         for word in word_list:
             word_lower = word.lower()
             count = words_in_title.count(word_lower)
@@ -42,15 +43,12 @@ def count_words(subreddit, word_list, instances={}, after=None):
         count_words(subreddit, word_list, instances, after)
     else:
         if instances:
-            sorted_instances = sorted(instances.items(), key=lambda kv: (-kv[1], kv[0]))
+            sorted_instances = sorted(
+                instances.items(), key=lambda kv: (-kv[1], kv[0]))
             for word, count in sorted_instances:
                 print(f"{word}: {count}")
         else:
             print("")
-
-
-
-
 
 
 # #!/usr/bin/python3

@@ -13,12 +13,13 @@ def top_ten(subreddit):
     params = {
         "limit": 10
     }
-    response = requests.get(url, headers=headers, params=params, allow_redirects=False)
-    
+    response = requests.get(url, headers=headers,
+                            params=params, allow_redirects=False)
+
     if response.status_code == 404:
         print("None")
         return
-    
+
     if response.status_code != 200:
         print("None")
         return
@@ -32,7 +33,6 @@ def top_ten(subreddit):
                 print(title)
     except ValueError:
         print("None")
-
 
 
 # #!/usr/bin/python3

@@ -15,14 +15,13 @@
 #     elif response.status_code != 200:
 #         # Handle other potential HTTP errors (e.g., 500, 403, etc.)
 #         return 0
-    
+
 #     try:
 #         data = response.json().get("data", {})
 #         return data.get("subscribers", 0)
 #     except ValueError:
 #         # Handle JSON decoding errors
 #         return 0
-
 
 
 #!/usr/bin/python3
